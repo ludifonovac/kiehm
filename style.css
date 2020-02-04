@@ -1,0 +1,2120 @@
+/*!
+Theme Name: Kiehm
+Theme URI: http://underscores.me/
+Author: Nikola Dimitrijevic
+Author URI: http://twitter.com/buki_zvani_pera
+Description: WP theme for Kiehm.de
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: kiehm
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Kiehm is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Responsive
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+	margin: 0;
+	position: relative;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+
+legend {
+	box-sizing: border-box; /* 1 */
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@font-face {
+	font-family: "SourceSansPro";
+	src: url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: 'SourceSansPro', sans-serif;
+	/*font-size: 25px;*/
+	font-size: 16px;
+	/*font-size: 1rem;*/
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: 'SourceSansPro', sans-serif;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: 'SourceSansPro', "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+header.site-header {
+	/*height: 220px;*/
+	height: 150px;
+	background-color: #e3000b;
+	color: #fff;
+	/*font-size: 25px;*/
+	font-size: 16px;
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+}
+header.site-header.header-scrolled {
+	height: 110px;
+}
+header.site-header.header-scrolled div.site-branding {
+	width: 180px;
+}
+header.site-header.header-scrolled div.header-inside-div {
+	height: 70px;
+}
+
+div.content-area {
+	margin-top: 150px;
+}
+footer.site-footer {
+	height: 410px;
+	margin-top: 100px;
+	background-color: #e3000b;
+	color: #fff;
+}
+
+div.header-inside-div, div.site-content, div.footer-inside-div {
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+div.header-inside-div {
+	/*height: 160px;*/
+	height: 110px;
+}
+div.header-inside-div div {
+	display: inline-block;
+}
+div.site-branding {
+	/*width: 360px;
+	height: 160px;*/
+	width: 240px;
+}
+div.header-inside-div .header-contact {
+	float: right;
+	text-align: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+div.header-inside-div .header-contact p {
+	margin-bottom: 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-ms-flex-pack: justify;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+div.header-inside-div .header-contact a {
+	color: #fff;
+	text-decoration: none;
+}
+div.footer-inside-div {
+	padding: 0 20px;
+}
+div.footer-inside-div>div {
+	display: inline-block;
+	width: 400px;
+	vertical-align: top;
+}
+div.footer-inside-div a {
+	color: #fff;
+}
+div.footer-inside-div div.location h2 {
+	margin-bottom: 40px;
+}
+div.footer-inside-div div.site-info {
+	margin: 0 -20px 0 10px;
+}
+div.footer-inside-div div.site-info img {
+	width: 160px;
+	margin-top: 15px;
+}
+div.footer-inside-div div.site-info p {
+	margin-bottom: 0;
+	/*display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-ms-flex-pack: justify;
+	-ms-justify-content: space-between;
+	justify-content: space-between;*/
+	margin-left: 32px;
+	line-height: 1.2;
+}
+div.header-contact p:before, footer div.site-info p:before {
+	font-family: "FontAwesome";
+	/*display: inline-block;*/
+	/*display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;*/
+	text-align: left;
+	margin-right: 10px;
+}
+main.products-page h2, main.products-page h4 {
+	padding-left: 20px;
+}
+footer div.site-info p:before {
+	/*margin-left: -32px;*/
+	margin-left: -24px;
+}
+footer div.site-info p.address, footer div.site-info p.phone {
+	margin-bottom: 50px;
+}
+p.email:before {
+	content:"\f003";
+}
+p.phone:before {
+	content:"\f095";
+}
+/*p.fax:before {
+	content:" ";
+}*/
+p.address:before {
+	content:"\f041  ";
+}
+p.website:before {
+	content:"\f0ac";
+}
+footer div.footer-links {
+	width: 350px;
+}
+div.menu-footer-menu-container {
+	margin-top: 80px;
+}
+
+hr {
+	/*background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;*/
+	height: 4px;
+	background-color: #e3000b;
+	margin: 20px 0;
+}
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+span.edit-link {
+	display: none;
+}
+
+div.product-list {
+	width: 480px;
+	display: inline-block;
+	vertical-align: top;
+	max-height: 1015px;
+	min-height: 1015px;
+	overflow: auto;
+	/*padding-bottom: 800px;*/
+}
+div.product-list ul {
+	list-style: none;
+	margin: 0;
+}
+div.product-list ul>li {
+	height: 120px;
+	margin: 10px 0;
+	/*width: 425px;*/
+	width: 420px;
+	cursor: pointer;
+}
+li.product-listed.selected {
+	border-bottom: 5px solid #e3000b;
+}
+li.product-listed.last {
+	margin-bottom: 820px;
+}
+li.product-listed div {
+	display: inline-block;
+}
+li.product-listed div.product-list-img {
+	height: 155px;
+	width: 155px;
+	vertical-align: top;
+}
+li.product-listed img {
+	height: 100px;
+	width: 150px;
+	object-fit: cover;
+	vertical-align: middle;
+}
+li.product-listed div.product-list-desc {
+	padding-left: 20px;
+}
+div.product-list ul>li a {
+	text-decoration: none;
+	color: initial;
+}
+article.product {
+	width: 710px;
+	display: none;
+	padding: 0 20px;
+	border-left: 5px solid #ccc;
+}
+article.product.selected {
+	display: inline-block;
+}
+article.product h5, div.product-list ul>li h5 {
+	/*font-size: 24px;*/
+	font-size: 15px;
+}
+article.product h5.entry-title, div.product-list ul>li h5.entry-title {
+	font-weight: bold;
+}
+article.product h5.subtitle, div.product-list ul>li h5.subtitle {
+	color: #e3000b;
+}
+article.product div.product-description {
+	/*font-size: 20px;*/
+	font-size: 13px;
+}
+article.product div.product-description h6 {
+	font-weight: bold;
+	/*font-size: 20px;*/
+	font-size: 13px;
+}
+article.product div.product-description table {
+	/*width: 400px;*/
+	width: 320px;
+}
+article.product div.product-description table td {
+	/*width: 200px;*/
+	max-width: 200px;
+}
+article.product div.product-description table td.table-cell-right {
+	text-align: right;
+	padding-right: 30px;
+}
+article.product div.product-description table.pricing {
+	width: 260px;
+	display: inline-block;
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+article.product div.product-description table.pricing td {
+	width: 130px;
+}
+article.product div.product-description p.drivers-permit {
+	color: #e3000b;
+}
+article.product div.product-sale-details {
+	margin-bottom: 1.5em;
+}
+article.product div.product-sale-details>p{
+	margin: 0;
+}
+article.product div.product-description button, article.products_sale div.product-description a {
+	width: 270px;
+	height: 40px;
+	color: #fff;
+	background-color: #e3000b;
+	font-size: 15px;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: bottom;
+	padding: 8px;
+}
+article.products_sale div.product-description a {
+	text-align: center;
+	text-decoration: none;
+}
+article.resp-product, article.resp-product.show {
+	display: none !important;
+}
+article.resp-product div.close-product-div {
+	text-align: right;
+}
+article.resp-product a.close-product {
+	cursor: pointer;
+	font-size: 30px;
+}
+article.resp-product a.close-product:hover {
+	text-decoration: none;
+}
+
+.carousel-inner>.item {
+	max-height: 590px;
+	height: 444px;
+	height: calc(4000px / 9);
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	/*height: 100%;*/
+	width: 100%;
+	object-fit: cover;
+}
+
+div.takeover-form {
+	display: none;
+	background-color: rgba(127,127,127,0.7);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+}
+div.takeover-form>a {
+	position: absolute;
+    /*top: 255px;*/
+    top: 215px;
+    right: 8%;
+    right: calc(100% - 1200px);
+    font-size: 2em;
+}
+div.takeover-form>a:hover {
+	text-decoration: none;
+}
+div.takeover-form form {
+	background-color: #fff;
+	max-width: 1200px;
+	margin: 200px auto;
+	padding: 40px 20px;
+}
+div.takeover-form h1 {
+	color: #e3000b;
+}
+div.takeover-form form p {
+	padding: 0 60px;
+}
+div.takeover-form form label {
+	text-align: right;
+}
+div.takeover-form form input, div.takeover-form form select {
+	height: 32px;
+	height: 30px;
+	width: 560px;
+	vertical-align: top;
+}
+div.takeover-form form input[type="checkbox"] {
+	height: auto;
+	width: auto;
+	height: initial;
+	width: initial;
+	height: unset;
+	width: unset;
+}
+div.takeover-form form span.renting-date input, 
+div.takeover-form form span.renting-time select, 
+div.takeover-form form span.delivery-date input, 
+div.takeover-form form span.delivery-time select {
+	/*width: 280px;*/
+	width: 160px;
+}
+div.takeover-form form span.renting-time:before, 
+div.takeover-form form span.delivery-time:before {
+	content: "Uhrzeit";
+	font-weight: 700;
+	padding: 0 15px;
+}
+div.takeover-form form input[type="submit"] {
+	float: right;
+	background-color: #e3000b;
+	color: #fff;
+	width: 270px;
+	height: 32px;
+}
+
+.red {
+	color: #e3000b;
+}
+
+div#jobs, div#partner {
+	padding: 0 20px;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+form.wpcf7-form div.form-left, form.wpcf7-form div.form-right {
+	display: inline-block;
+}
+form.wpcf7-form div.form-right {
+	width: 390px;
+	font-weight: bold;
+	vertical-align: top;
+}
+form.wpcf7-form div.form-right p {
+	padding-left: 10px;
+	margin-top: 20px;
+}
+form.wpcf7-form p {
+	margin-bottom: 0;
+}
+form.wpcf7-form label {
+	width: 200px;
+	padding: 0 20px;
+	vertical-align: top;
+}
+form.wpcf7-form span.wpcf7-list-item {
+	margin: 0;
+	margin-right: 20px;
+}
+form.wpcf7-form textarea {
+	width: initial;
+}
+form.wpcf7-form div.form-buttons {
+	padding-left: 200px;
+}
+form.wpcf7-form input[type="submit"], form.wpcf7-form input[type="reset"] {
+	border: none;
+	background: none;
+	font-size: 16px;
+	color: #e3000b;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+#zubehoer{
+	margin-left: 60px;
+	margin-right: 60px;
+	margin-top: 20px;
+}
+
+#zubehoer label{
+	text-align: left;
+	padding-left: 10px;
+}
+#zubehoer .wpcf7-number{
+	/*width: 34px;*/
+	width: 44px;
+	text-align: center;
+}
+#zubehoer .wpcf7-list-item{
+	margin-right: 0px;
+}
+#zubehoer .label_right{
+	text-align: right;
+	width: 60px;
+	/*padding-left: 20px;*/
+}
+.zuebhoer_line{
+	float: left;
+	margin-left: 200px;
+}
+#zubehoer .master_label{
+	text-align: right;
+}
+#zubehoer .zubehoer_item{
+	float: left;
+	min-width: 310px;
+	margin-right: 10px;
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+div.header-inside-div div.navicon {
+	display: none;
+}
+div.header-inside-div div.navicon a {
+	color: #fff;
+}
+div.header-inside-div div.navicon a:before {
+	content: "☰";
+}
+div.header-inside-div div.navicon.open a:before {
+	content: "X";
+}
+div.header-inside-div div.navicon a:focus, div.header-inside-div div.navicon a:active {
+	text-decoration: none;
+	outline: none;
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	/*color: royalblue;*/
+	color: #e3000b;
+}
+
+a:visited {
+	/*color: purple;*/
+}
+
+a:hover, a:focus, a:active {
+	color: midnightblue;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+nav.main-navigation {
+	padding: 0 20px;
+	height: 60px;
+	max-width: 1200px;
+	margin: 0 auto;
+	/*margin-top: 20px;*/
+	margin-top: 10px;
+}
+nav.main-navigation a {
+	color: #fff;
+	text-transform: uppercase;
+	/*font-size: 23px;*/
+	font-size: 18px;
+	/*font-size: 15px;*/
+}
+
+.main-navigation {
+	clear: both;
+	display: block;
+	/*float: left;*/
+	width: 100%;
+}
+
+.main-navigation ul {
+	/*display: none;*/
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-ms-flex-pack: justify;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+	display: block;
+	background-color: #e3000b;
+	min-width: 100%;
+	margin-left: -10px;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul a {
+	/*width: 200px;*/
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+	padding: 0 10px;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+.main-navigation li:hover {
+	background-color: #fff;
+	font-weight: bold;
+}
+nav.main-navigation li a {
+	font-size: 16px;
+}
+.main-navigation li:hover a {
+	color: #e3000b;
+}
+.main-navigation ul ul li {
+	float: none;
+	text-align: center;
+}
+.main-navigation ul li:hover li a {
+	color: #fff;
+}
+.main-navigation ul ul li:hover a {
+	color: #e3000b;
+	font-weight: bold;
+}
+.main-navigation ul ul li a {
+	text-transform: none;
+	font-weight: normal;
+}
+/*.main-navigation ul ul li:hover {
+	font-weight: bold;
+}*/
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+ul#footer-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		/*display: block;*/
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	/*margin: 1.5em 0 0;*/
+	padding: 20px;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+div.site-content header div.post-thumbnail {
+	max-width: 1200px;
+	/*max-height: 600px;*/
+	height: 330px;
+}
+div.site-content header div.post-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50%;
+}
+div.site-content header h1 {
+	background-color: #e3000b;
+	color: #fff;
+	/*font-size: 44px;*/
+	/*font-size: 34px;*/
+	/*font-size: 26px;*/
+	font-size: 20px;
+	/*min-height: 60px;*/
+	min-height: 30px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	/*padding-top: 8px;*/
+	/*padding-top: 12px;
+	padding-bottom: 12px;*/
+	padding-top: 13px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+div.site-content h2 {
+	/*font-size: 35px;*/
+	font-size: 20px;
+	color: #e3000b;
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+div.site-content h3 {
+	color: #e3000b;
+}
+div.site-content h4 {
+	font-weight: bold;
+	/*font-size: 26px;*/
+	font-size: 16px;
+}
+.homepage-news h2 {
+	padding: 40px 0;
+}
+
+article.news, article.jobs, article.partner {
+	margin-bottom: 0;
+}
+article.news p, article.jobs p, article.partner p {
+	margin-bottom: 0;
+}
+article.partners {
+	width: 49.5%;
+	width: calc(50% - 4px);
+	display: inline-block;
+}
+article.partners p {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+## Responsive
+--------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+	div.takeover-form form {
+		width: 98%;
+		width: calc(100% - 40px);
+	}
+	div.takeover-form>a {
+		right: 40px;
+	}
+	div.takeover-form form p {
+		padding: 0;
+	}
+	div.product-list {
+		max-height: calc(100vw - 100px);
+	}
+	article.product {
+		width: 50%;
+		width: calc(100% - 500px);
+	}
+	.carousel-inner>.item {
+		height: calc((200vw - 1090px) / 3);
+	}
+	.zuebhoer_line{
+		/*float: left;
+		margin-left: 200px;*/
+	}
+	#zubehoer{
+		margin-left: 0px;
+		/*margin-right: 60px;
+		margin-top: 20px;*/
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.main-navigation li {
+		padding: 0;
+	}
+	nav.main-navigation li a, nav.main-navigation a {
+		font-size: 15px;
+	}
+	.main-navigation ul li:hover>ul, .main-navigation ul li.focus>ul {
+		margin-left: 0;
+	}
+	div.takeover-form form input, div.takeover-form form select {
+		width: 70%;
+	}
+	div.takeover-form form span.renting-date input, 
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-date input, 
+	div.takeover-form form span.delivery-time select {
+		/*width: 35%;*/
+	}
+	form.wpcf7-form div.form-right {
+		width: calc(100% - 535px);
+	}
+	div.product-list {
+		width: 400px;
+		/*max-height: 865px;*/
+	}
+	div.product-list ul>li {
+		height: 125px;
+		width: 350px;
+	}
+	li.product-listed div.product-list-img {
+		height: 125px;
+		width: 125px;
+	}
+	li.product-listed img {
+		height: 120px;
+		width: 120px;
+	}
+	li.product-listed div.product-list-desc {
+		padding-left: 10px;
+		width: 220px;
+	}
+	article.product {
+		width: 50%;
+		width: calc(100% - 430px);
+	}
+	.carousel-inner>.item {
+		height: calc((200vw - 950px) / 3);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	nav.main-navigation a {
+		text-transform: unset;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	nav.main-navigation a {
+		font-size: 13px;
+		/*text-transform: unset;*/
+	}
+	footer.site-footer {
+		height: unset;
+	}
+	input.wpcf7-form-control {
+		width: 200px;
+	}
+	div.takeover-form form input, div.takeover-form form select {
+		width: 60%;
+	}
+	div.takeover-form form span.renting-date input, 
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-date input, 
+	div.takeover-form form span.delivery-time select {
+		/*width: 30%;*/
+	}
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-time select {
+		width: 80px;
+	}
+	div.takeover-form form label.uhrzeit {
+		width: 100px;
+	}
+	form.wpcf7-form label {
+		width: 160px;
+	}
+	form.wpcf7-form div.form-right {
+		width: calc(100% - 375px);
+	}
+	form.wpcf7-form textarea {
+		width: 100%;
+	}
+	main.products-page {
+		/*display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;*/
+	}
+	li.product-listed.last {
+		margin-bottom: 0;
+	}
+	div.product-list, article.product {
+		width: 100%;
+		padding: 0 calc(50% - 320px);
+	}
+	div.product-list {
+		/*order: 20;*/
+		/*max-height: 300px;
+		overflow: scroll;*/
+		max-height: unset;
+	}
+	article.product {
+		border: none;
+		/*order: 1;*/
+	}
+	article.product.selected {
+		display: none;
+	}
+	article.resp-product.show {
+		display: block !important;
+		-moz-transition: 0.4s;
+		-webkit-transition: 0.4s;
+		-o-transition: 0.4s;
+		transition: 0.4s;
+		padding-left: 0;
+		padding-right: 40px;
+	}
+	.carousel-inner>.item {
+		/*height: 590px;*/
+		height: calc(560px / 3 * 2);
+		/*height: calc((200vw - 416px) / 3);*/
+	}
+	.zuebhoer_line{
+		/*float: left;*/
+		margin-left: 160px;
+	}
+	#zubehoer{
+		/*margin-left: 0px;*/
+		/*margin-right: 60px;
+		margin-top: 20px;*/
+	}
+}
+@media screen and (max-width: 640px) {
+	header.site-header.header-scrolled {
+		/*height: 130px;*/
+		height: 85px;
+	}
+	div.header-inside-div {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;
+	}
+	div.header-inside-div div.site-branding {
+		order: 2;
+		margin-left: 20px;
+	}
+	div.header-inside-div div.header-contact {
+		order: 1;
+		width: 100%;
+		text-align: center;
+	}
+	div.header-inside-div .header-contact p {
+		display: inline-block;
+		margin-left: 10px;
+	}
+	div.header-inside-div div.navicon {
+		display: block;
+		order: 3;
+		font-size: 32px;
+		text-align: right;
+		/*margin-top: -80px;
+		margin-right: 20px;*/
+		position: absolute;
+		top: 75px;
+		right: 20px;
+	}
+	header.site-header.header-scrolled div.header-contact {
+		display: none;
+	}
+	header.site-header.header-scrolled div.navicon {
+		/*margin-top: -60px;*/
+		/*top: 60px;*/
+		top: 20px;
+	}
+	nav.main-navigation {
+		display: none;
+		margin-top: 40px;
+		background-color: #e3000b;
+		height: auto;
+	}
+	nav.main-navigation a {
+		text-transform: uppercase;
+	}
+	header.site-header.header-scrolled nav.main-navigation {
+		/*margin-top: 55px;*/
+		margin-top: 15px;
+	}
+	.main-navigation ul#primary-menu {
+		padding: 10px 0;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+	.main-navigation li {
+		float: none;
+		position: unset;
+		margin: 10px 0;
+	}
+	.main-navigation ul ul {
+		box-shadow: none;
+		position: unset;
+		top: unset;
+		left: unset;
+		float: none;
+	}
+	.main-navigation ul ul li {
+		text-align: left;
+		padding-left: 20px;
+	}
+	div.footer-inside-div>div {
+		width: 100%;
+	}
+	div.footer-inside-div div.location iframe {
+		width: 100%;
+	}
+	footer div.site-info p.address, footer div.site-info p.phone {
+		margin-bottom: 15px;
+	}
+	div.menu-footer-menu-container {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	div.homepage-news {
+		padding: 20px;
+		padding-top: 0;
+	}
+	/*form.wpcf7-form div.form-right {
+		width: calc(100% - 370px);
+	}*/
+	form.wpcf7-form div.form-buttons {
+		padding-left: 0;
+	}
+	article.partners {
+		width: 100%;
+		display: block;
+	}
+	div.product-list, article.product {
+		padding: 0 20px;
+	}
+	.carousel-inner>.item {
+		height: calc((200vw - 240px) / 3);
+	}
+}
+
+@media screen and (max-width: 578px) {
+	form.wpcf7-form div.form-left {
+		width: calc(100% - 155px);
+	}
+	form.wpcf7-form label {
+		/*width: 150px;*/
+		width: 100%;
+	}
+	input.wpcf7-form-control {
+		width: 100%;
+	}
+	form.wpcf7-form div.form-right {
+		width: 140px;
+	}
+	form.wpcf7-form div.form-buttons input {
+		width: unset;
+	}
+	div.takeover-form form label {
+		width: 80%;
+		text-align: left;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding: 0;
+	}
+	div.takeover-form form input, div.takeover-form form select {
+		/*width: 50%;*/
+		width: 100%;
+	}
+	div.takeover-form form span.renting-date input, 
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-date input, 
+	div.takeover-form form span.delivery-time select {
+		/*width: 25%;*/
+		/*width: 50%;*/
+	}
+	.carousel-inner>.item {
+		/*height: 540px;*/
+	}
+	#zubehoer .master_label{
+		text-align: left;
+	}
+	.zuebhoer_line{
+		/*float: left;*/
+		margin-left: 0px;
+	}
+	#zubehoer{
+		/*margin-left: 0px;*/
+		/*margin-right: 60px;
+		margin-top: 20px;*/
+	}
+	#zubehoer .label_right{
+		/*text-align: right;
+		width: 60px;
+		padding-left: 20px;*/
+		margin-right: 10px;
+	}
+	#zubehoer label{
+		/*text-align: left;
+		padding-left: 10px;*/
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	div.site-content header h1 {
+		font-size: 24px;
+		min-height: 50px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		/*height: unset;*/
+	}
+	form.wpcf7-form label {
+		/*width: 140px;*/
+	}
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-time select {
+		width: 50px;
+	}
+	div.takeover-form form span.renting-date input, 
+	div.takeover-form form span.delivery-date input { 
+		/*width: calc(50% - 50px);*/
+		/*width: 150px;*/
+	}
+	div.takeover-form form label.uhrzeit {
+		width: 65px;
+	}
+	div.product-list>h2, div.product-list>h4, div.product-list>ul {
+		padding: 0;
+	}
+	.carousel-inner>.item {
+		/*height: 440px;*/
+		height: calc((200vw - 160px) / 3);
+	}
+	article.product div.product-description table {
+		max-width: 400px;
+	}
+	article.resp-product.show {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#zubehoer {
+		width: 100%;
+	}
+	#zubehoer .zubehoer_item {
+		width: 100%;
+	}
+	#zubehoer label {
+		width: 180px;
+	}
+	#zubehoer .label_right {
+		width: 45px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	h1 {
+		font-size: 1.6em;
+	}
+	div.site-content header h1 {
+		font-size: 22px;
+		min-height: 50px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	header.site-header {
+		height: 180px;
+	}
+	header.site-header.header-scrolled {
+		/*height: 150px;*/
+	}
+	div.site-branding {
+		width: 220px;
+	}
+	div.header-inside-div .header-contact p {
+		display: block;
+	}
+	div.header-inside-div div.navicon {
+		top: 90px;
+	}
+	header.site-header.header-scrolled div.header-inside-div div.navicon {
+		/*top: 80px;*/
+	}
+	nav.main-navigation {
+		margin-top: 65px;
+	}
+	header.site-header.header-scrolled nav.main-navigation {
+		/*margin-top: 80px;*/
+		/*margin-top: 15px;*/
+	}
+	form.wpcf7-form label {
+		padding: 0;
+	}
+	div.takeover-form form label {
+		text-align: left;
+		width: 80%;
+		padding: 0;
+	}
+	div.takeover-form form input, div.takeover-form form select {
+		width: 100%;
+	}
+	/*div.takeover-form form span.renting-date input, 
+	div.takeover-form form span.renting-time select, 
+	div.takeover-form form span.delivery-date input, 
+	div.takeover-form form span.delivery-time select {
+		width: 50%;
+	}*/
+	div.takeover-form form input[type="submit"] {
+		width: 100%;
+	}
+	div.product-list ul>li {
+		width: 100%;
+		height: 100px;
+	}
+	li.product-listed div.product-list-img {
+		height: 100px;
+		width: 100px;
+	}
+	li.product-listed img {
+		height: 95px;
+		width: 95px;
+	}
+	li.product-listed div.product-list-desc {
+		padding-left: 0;
+		width: 205px;
+		width: calc(100% - 105px);
+	}
+	div.product-list ul>li h5 {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	div.product-list ul>li h5.entry-title {
+		margin-top: 0;
+	}
+	li.product-listed div.product-list-desc p {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+	.carousel-inner>.item {
+		/*height: 320px;*/
+	}
+	article.product div.product-description table {
+		width: 100%;
+	}
+	#zubehoer label {
+		width: 80%;
+	}
+	#zubehoer .label_right {
+		padding-left: 20px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	li.product-listed div.product-list-desc p {
+		font-size: 11px;
+	}
+	article.product div.product-description button, article.products_sale div.product-description a {
+		width: 100%;
+	}
+	div.takeover-form h1 {
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+	}
+}
